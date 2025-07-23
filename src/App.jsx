@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import MainContent from "./pages/Home/MainContent";
+// import Footer from "./components/Footer";
 
 function App() {
   const [activeTab, setActiveTab] = useState(-1);
@@ -21,6 +22,7 @@ function App() {
       <div className="relative z-10">
         <Header onLogoClick={handleLogoClick} />
         <MainContent activeTab={activeTab} setActiveTab={setActiveTab} />
+        {/* <Footer/> */}
       </div>
     </div>
   );

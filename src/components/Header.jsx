@@ -1,4 +1,4 @@
-import logoImg from "../assets/vdfdf 1.png";
+import logoImg from "/assets/vdfdf 1.png";
 const Header = ({ onLogoClick }) => {
   return (
     <header className="flex justify-center pt-8 pb-4">

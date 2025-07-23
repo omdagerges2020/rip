@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { FaLinkedin, FaInstagram, FaTwitter, FaFacebook, FaVimeo } from "react-icons/fa"
-import footerImage from "../assets/footerlogo.png"
+import footerImage from "/assets/footerlogo.png"
 
 const Footer = () => {
   const socialLinks = [
