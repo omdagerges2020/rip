@@ -6,6 +6,8 @@ import MainContent from "./pages/Home/MainContent";
 
 function App() {
   const [activeTab, setActiveTab] = useState(-1);
+  const [showTabsMenu, setShowTabsMenu] = useState(false);
+
 
   const handleLogoClick = () => {
     setActiveTab(-1);
@@ -21,7 +23,7 @@ function App() {
 
       <div className="relative z-10">
         <Header onLogoClick={handleLogoClick} />
-        <MainContent activeTab={activeTab} setActiveTab={setActiveTab} />
+        <MainContent activeTab={activeTab} setActiveTab={setActiveTab} showTabsMenu={showTabsMenu} setShowTabsMenu={setShowTabsMenu}/>
         {/* <Footer/> */}
       </div>
     </div>

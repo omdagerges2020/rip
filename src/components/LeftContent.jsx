@@ -1,8 +1,7 @@
 const LeftContent = ({ activeTab }) => {
   
   return (
-    <>
-        <div className={`${activeTab === 2 && "hidden"}text-white  space-y-4 mb-8`} dir="rtl">
+        <div className="text-white flex justify-center items-center flex-col  space-y-4 mb-8" dir="rtl">
           <h2 className="text-2xl font-bold text-orange-900 mb-4">
             وش معنى <span className="text-white">ريب</span> ؟
           </h2>
@@ -16,7 +15,6 @@ const LeftContent = ({ activeTab }) => {
             </span>
           </div>
         </div>
-    </>
   );
 };
 

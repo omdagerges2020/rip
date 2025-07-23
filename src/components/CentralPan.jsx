@@ -1,12 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import zebdaImage from "/assets/zebda.png";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Carousel } from "@material-tailwind/react";
-import clientsImage from "/assets/clients.png";
+import ClientLayout from "./clientTab/ClientLayout";
 
 const CentralPan = ({ activeTab }) => {
   return (
@@ -156,7 +150,7 @@ const CentralPan = ({ activeTab }) => {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="w-full h-full"
           >
-            <ClientsCircle />
+            <ClientLayout />
           </motion.div>
         ) : activeTab === 3 ? (
           // Tab 4 - ليج الزبدة ؟ كلمنا (Tab 3 in 0-indexed array)
@@ -219,39 +213,7 @@ const WorksCircle = () => (
   </div>
 );
 
-// Tab 2 - Clients circle
-const ClientsCircle = () => (
-  <div className="w-[500px] flex justify-center items-center h-full  border-2 border-gray-700 rounded-xl relative ">
-    {/* <div className="absolute inset-4 rounded-full bg-gradient-to-br from-green-900 to-black flex items-center justify-center">
-      <div className="text-center text-white" dir="rtl">
-        <div className="bg-green-500 text-white px-3 py-1 rounded-lg font-bold text-sm mb-2">عملاؤنا</div>
-        <h3 className="text-yellow-400 font-bold text-xl mb-2">شركاء النجاح</h3>
-        <p className="text-gray-300 text-sm">
-          عملاء يثقون بنا
-          <br />
-          في كل مشروع
-        </p>
-      </div>
-    </div> */}
-    <Carousel className="rounded-xl">
-      <img
-        src={clientsImage}
-        alt="image 1"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src={clientsImage}
-        alt="image 2"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src={clientsImage}
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
-    </Carousel>
-  </div>
-);
+
 
 // Tab 4 - Contact circle
 const ContactCircle = () => (

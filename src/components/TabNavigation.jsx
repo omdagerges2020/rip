@@ -9,7 +9,7 @@ const TabNavigation = ({ activeTab, setActiveTab }) => {
         <motion.button
           key={index}
           onClick={() => setActiveTab(index)}
-          className={`px-6 py-4 rounded-full text-center text-black text-[16px] font-bold transition-all duration-300 w-[217px] ${
+          className={`px-6 py-4 rounded-full text-center text-black text-[16px] font-bold transition-all duration-300 w-[217px]  ${
             activeTab === index ? "bg-orange-500 text-white shadow-lg hover:bg-orange-600" : "bg-white text-gray-900 shadow-md hover:bg-gray-100"
           }`}
           whileHover={{ scale: 1.02 }}
