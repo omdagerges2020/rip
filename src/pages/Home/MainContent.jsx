@@ -11,7 +11,7 @@ import LeftContentMobile from "../../components/LeftContentMobile";
 
 const MainContent = ({ activeTab, setActiveTab, showTabsMenu, setShowTabsMenu }) => {
   return (
-    <main className="container mx-auto px-8 py-8">
+    <main className="w-full px-2 sm:px-4 md:px-8 py-8 overflow-x-hidden">
       {/* Main heading with positioned orange text */}
       {activeTab === 1 ? (
         <div className="flex w-full justify-center">
@@ -68,7 +68,7 @@ const MainContent = ({ activeTab, setActiveTab, showTabsMenu, setShowTabsMenu })
           <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
       </div> */}
-      <div className="flex flex-col xl:flex-row gap-3 items-stretch w-full">
+      <div className="flex flex-col xl:flex-row gap-3 items-center jstify-center w-full">
         {/* Left */}
         <div
           className={`${
@@ -100,7 +100,7 @@ const MainContent = ({ activeTab, setActiveTab, showTabsMenu, setShowTabsMenu })
             <CentralPan activeTab={activeTab} />
           )}
         </div> */}
-        <div className="flex-1 flex justify-center">
+        <div className="flex-1 xl:flex-1 w-full xl:w-auto max-w-2xl xl:max-w-none flex justify-center items-center mx-auto xl:mx-0">
           {/* في xl: اعرض CentralPan/TeamLayout عادي
         في md/lg: اعرض TabNavigation إذا showTabsMenu = true، وإلا اعرض CentralPan/TeamLayout */}
           {showTabsMenu && window.innerWidth < 1280 ? (

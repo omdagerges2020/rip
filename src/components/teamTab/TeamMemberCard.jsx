@@ -16,7 +16,7 @@ const TeamMemberCard = ({ name, title, imageSrc }) => {
       transition={{ duration: 0.3 }}
       whileHover={{ opacity: 1 }}
     >
-      <Card className=" bg-gray-700/10 opacity-1">
+      <Card className="bg-gray-700/10 opacity-100">
         <CardHeader floated={false} className="w-[70px]">
           <img
             src={cardImage || "/placeholder.svg"}

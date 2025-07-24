@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 const TeamLeftContentBottom = () => {
   return (
     <motion.div
-      className="text-white space-y-2 w-[170px] border-r-[2px] px-3 border-orange-900"
+      className="text-white space-y-2 w-full xl:w-[170px] border-r-[2px] px-3 border-orange-900"
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
