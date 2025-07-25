@@ -8,8 +8,14 @@ import TeamLeftContentBottom from "../../components/teamTab/TeamLeftContentBotto
 import textLogo from "/assets/logotext.png";
 import clientstopLogo from "/assets/clientstoplogo.png";
 import LeftContentMobile from "../../components/LeftContentMobile";
+import OurWorkersLeftContent from "../../components/ourWorks/OurWorkersLeftContent";
 
-const MainContent = ({ activeTab, setActiveTab, showTabsMenu, setShowTabsMenu }) => {
+const MainContent = ({
+  activeTab,
+  setActiveTab,
+  showTabsMenu,
+  setShowTabsMenu,
+}) => {
   return (
     <main className="w-full px-2 sm:px-4 md:px-8 py-8 overflow-x-hidden">
       {/* Main heading with positioned orange text */}
@@ -23,57 +29,19 @@ const MainContent = ({ activeTab, setActiveTab, showTabsMenu, setShowTabsMenu })
             style={{ marginBottom: "-4rem" }}
           />
         </div>
-      ) : activeTab === 2 ? null : (
+      ) : activeTab === 2 ? null : activeTab === 0 ? null : (
         <div className="flex w-full justify-center mt-5">
           <img src={textLogo} alt="text logo" />
         </div>
       )}
 
       {/* Main content grid */}
-      {/* <div
-        className={`grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-10 ${
-          activeTab === 1 ? "lg:grid-cols-10" : "lg:grid-cols-10"
-        }  gap-3 items-end`}
-      >
-        <div
-          className={`order-1 lg:order-1 ${
-            activeTab === 1 ? "lg:col-span-1" : "lg:col-span-2"
-          }  flex flex-col items-start`}
-        >
-          {activeTab === 2 ? (
-            <div className="flex flex-col gap-5 ms-3">
-              <TeamLeftContentTop />
-              <TeamLeftContentBottom />
-            </div>
-          ) : activeTab === 1 ? (
-            <div className="w-full h-full"></div>
-          ) : (
-            <LeftContent />
-          )}
-        </div>
-
-        <div
-          className={`order-2 lg:order-2 ${
-            activeTab === 1 ? "lg:col-span-7" : "lg:col-span-6"
-          }  flex justify-center`}
-        >
-          {activeTab === 2 ? (
-            <TeamLayout />
-          ) : (
-            <CentralPan activeTab={activeTab} />
-          )}
-        </div>
-
-        <div className="order-3 lg:order-3 lg:col-span-2 flex justify-center">
-          <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-        </div>
-      </div> */}
-      <div className="flex flex-col xl:flex-row gap-3 items-center jstify-center w-full">
+      <div className="flex flex-col xl:flex-row gap-3 items-center jstify-center w-full max-w-7xl mx-auto">
         {/* Left */}
         <div
           className={`${
-            activeTab === 1 ? "lg:basis-[10%]" : "lg:basis-[10%]"
-          } flex-col items-center xl:items-start hidden sm:flex`}
+            activeTab === 1 ? "lg:basis-[30%]" : "lg:basis-[20%]"
+          } flex-col items-center xl:items-end hidden sm:flex`}
         >
           {activeTab === 2 ? (
             // <div className="flex flex-col gap-5 ms-3">
@@ -83,26 +51,21 @@ const MainContent = ({ activeTab, setActiveTab, showTabsMenu, setShowTabsMenu })
             <div className="w-full h-full"></div>
           ) : activeTab === 1 ? (
             <div className="w-full h-full"></div>
+          ) : activeTab === 0 ? (
+            <OurWorkersLeftContent />
           ) : (
             <LeftContent />
           )}
         </div>
 
         {/* Center */}
-        {/* <div
+        <div
           className={`${
-            activeTab === 1 ? "lg:basis-[70%]" : "lg:basis-[60%]"
-          } flex justify-center`}
+            activeTab === 0
+              ? "lg:basis-[40%] max-w-4xl"
+              : "lg:basis-[50%] max-w-2xl xl:max-w-none"
+          } flex justify-center items-center mx-auto mb-[3em]`}
         >
-          {activeTab === 2 ? (
-            <TeamLayout />
-          ) : (
-            <CentralPan activeTab={activeTab} />
-          )}
-        </div> */}
-        <div className="flex-1 xl:flex-1 w-full xl:w-auto max-w-2xl xl:max-w-none flex justify-center items-center mx-auto xl:mx-0">
-          {/* في xl: اعرض CentralPan/TeamLayout عادي
-        في md/lg: اعرض TabNavigation إذا showTabsMenu = true، وإلا اعرض CentralPan/TeamLayout */}
           {showTabsMenu && window.innerWidth < 1280 ? (
             <TabNavigation
               activeTab={activeTab}
@@ -117,17 +80,13 @@ const MainContent = ({ activeTab, setActiveTab, showTabsMenu, setShowTabsMenu })
             <CentralPan activeTab={activeTab} />
           )}
         </div>
-        {/* 
-        <div className="lg:basis-[20%] flex justify-center">
-          <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-        </div> */}
         {/* Right: TabNavigation يظهر فقط في xl */}
-        <div className="hidden xl:flex xl:basis-[20%] justify-center">
+        <div className="hidden xl:flex xl:basis-[30%] justify-center items-center">
           <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
       </div>
 
-        {/* LeftContent for mobile only (before footer) */}
+      {/* LeftContent for mobile only (before footer) */}
       {activeTab !== 2 && activeTab !== 1 && (
         <div className="flex sm:hidden w-full justify-center mt-6">
           <LeftContentMobile />

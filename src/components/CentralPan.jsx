@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import zebdaImage from "/assets/zebda.png";
 import ClientLayout from "./clientTab/ClientLayout";
+import OurWorksLayout from "./ourWorks/OurWorksLayout";
 
 const CentralPan = ({ activeTab }) => {
   return (
@@ -138,7 +139,7 @@ const CentralPan = ({ activeTab }) => {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="w-full h-full"
           >
-            <WorksCircle />
+            <OurWorksLayout />
           </motion.div>
         ) : activeTab === 1 ? (
           // Tab 2 - زبدة عملائنا

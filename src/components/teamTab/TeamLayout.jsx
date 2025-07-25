@@ -140,22 +140,9 @@ const TeamLayout = () => {
         {/* Co-founders section */}
         <div className="flex-1 order-1 xl:order-2 w-full flex justify-center items-center">
           <div
-            className="   w-full
-            max-w-md
-    xl:max-w-2xl
-    lg:max-w-2xl
-    md:max-w-2xl
-    min-h-[120px] 
-    h-[120px] 
-    md:h-[150px] 
-    rounded-md 
-    bg-cover 
-    bg-center 
-    relative 
-    gap-5
-    mx-auto"
-            style={{ backgroundImage: `url(${bgImage})` }}
-          >
+            className="w-full
+            max-w-md xl:max-w-2xl lg:max-w-2xl md:max-w-2xl min-h-[120px] h-[120px] md:h-[150px] rounded-md bg-cover bg-center relative gap-5 mx-auto"
+            style={{ backgroundImage: `url(${bgImage})` }}>
             <img
               src={teammember1img}
               alt="إسلام شاكر"

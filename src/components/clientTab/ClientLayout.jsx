@@ -1,4 +1,3 @@
-import { Button, Carousel } from "@material-tailwind/react";
 import clientsImage from "/assets/clients.png";
 import { BiSkipPrevious } from "react-icons/bi";
 import { MdSkipNext } from "react-icons/md";
@@ -7,6 +6,8 @@ import { Navigation, Pagination } from "swiper/modules"; // Import required Swip
 import "swiper/css"; // Import Swiper styles
 import "swiper/css/navigation"; // Optional: for navigation buttons
 import "swiper/css/pagination"; // Optional: for pagination dots
+import clientstopLogo from "/assets/clientstoplogo.png";
+
 
 const ClientLayout = () => {
   return (
