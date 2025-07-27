@@ -40,7 +40,7 @@ const LeftContent = ({ activeTab }) => {
       ) : activeTab === 1 ? (
         null
       ) : activeTab === 2 ? (
-        <div>2</div>
+        null
       ) : activeTab === 3 ? (
         <div>3</div>
       ) : (

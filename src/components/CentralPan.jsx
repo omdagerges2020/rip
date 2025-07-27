@@ -2,11 +2,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import DefaultCircle from "./DefaultCircle";
 import logoabovevideoImg from "/assets/zebdaa3malna.png";
 import ClientsCircle from "./ClientsCircle";
+import TeamCircle from "./TeamCircle";
 
 
 const CentralPan = ({ activeTab, animationState, setAnimationState }) => {
   return (
-    <div className="w-[600px] h-[500px]">
+    <div className={`${activeTab === -1 ? "w-[600px]" : "min-w-[600px]"} min-h-screen`} >
       <AnimatePresence mode="wait">
         {activeTab === -1 ? (
           // Default main page circle
@@ -42,7 +43,7 @@ const CentralPan = ({ activeTab, animationState, setAnimationState }) => {
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 100, opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="w-full h-full"
+            className="w-full"
           >
             <ClientsCircle />
           </motion.div>
@@ -111,25 +112,25 @@ const WorksVideo = () => (
 
 
 // Tab 3 - Team circle
-const TeamCircle = () => (
-  <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-800 to-purple-900 border-4 border-purple-700 relative overflow-hidden shadow-2xl">
-    <div className="absolute inset-4 rounded-full bg-gradient-to-br from-purple-900 to-black flex items-center justify-center">
-      <div className="text-center text-white" dir="rtl">
-        <div className="bg-purple-500 text-white px-3 py-1 rounded-lg font-bold text-sm mb-2">
-          فريقنا
-        </div>
-        <h3 className="text-yellow-400 font-bold text-xl mb-2">
-          خبراء محترفون
-        </h3>
-        <p className="text-gray-300 text-sm">
-          فريق متخصص
-          <br />
-          في الإبداع
-        </p>
-      </div>
-    </div>
-  </div>
-);
+// const TeamCircle = () => (
+//   <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-800 to-purple-900 border-4 border-purple-700 relative overflow-hidden shadow-2xl">
+//     <div className="absolute inset-4 rounded-full bg-gradient-to-br from-purple-900 to-black flex items-center justify-center">
+//       <div className="text-center text-white" dir="rtl">
+//         <div className="bg-purple-500 text-white px-3 py-1 rounded-lg font-bold text-sm mb-2">
+//           فريقنا
+//         </div>
+//         <h3 className="text-yellow-400 font-bold text-xl mb-2">
+//           خبراء محترفون
+//         </h3>
+//         <p className="text-gray-300 text-sm">
+//           فريق متخصص
+//           <br />
+//           في الإبداع
+//         </p>
+//       </div>
+//     </div>
+//   </div>
+// );
 
 // Tab 4 - Contact circle
 const ContactCircle = () => (

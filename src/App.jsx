@@ -59,12 +59,13 @@ function App() {
           setAnimationState={setAnimationState}
         />
         <Footer />
-      </div>
-      {activeTab === -1 && (
-        <div className="absolute bottom-[-15px] left-0 p-4">
+           {activeTab === -1 && (
+        <div className="absolute bottom-[2px] left-0 p-4">
           <img src={lionImg} alt="lion" width={100} />
         </div>
       )}
+      </div>
+   
     </div>
   );
 }

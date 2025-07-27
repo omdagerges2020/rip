@@ -10,7 +10,7 @@ const DefaultCircle = ({animationState, setAnimationState}) => {
       scale: 1,
       rotate: 10,
       x: 0,
-      y: -50,
+      y: -150,
     },
     clicked: {
       scale: 0.5, // Zoom out
@@ -89,8 +89,9 @@ const DefaultCircle = ({animationState, setAnimationState}) => {
         className="absolute inset-1 rounded-full flex items-center justify-center"
         style={{
           backgroundImage: "url(/assets/tasa.png)",
-          backgroundPosition: "120% 50%", // X% Y% (move right/left and up/down)
+          backgroundPosition: "120% 0%", // X% Y% (move right/left and up/down)
           backgroundSize: "120%", // zoom in (increase), zoom out (decrease)
+          backgroundRepeat: "no-repeat",
         }}
       >
         <motion.img

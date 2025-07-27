@@ -22,6 +22,9 @@ const MainContent = ({
     } else if (activeTab === 1) {
       // clients tab - normal spacing
       return "grid grid-cols-1 lg:grid-cols-[1fr_4fr_1fr] gap-8 items-start mt-8";
+    } else if (activeTab === 2) {
+      // team tab - normal spacing
+      return "grid grid-cols-1 lg:grid-cols-[1fr_3fr_1fr] gap-8 items-start mt-16";
     } else {
       // Default tabs - normal spacing
       return "grid grid-cols-1 lg:grid-cols-3 gap-8 items-start";
