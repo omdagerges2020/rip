@@ -1,20 +1,66 @@
+import { motion } from "framer-motion";
+import zebdaelsherkaImg from "/assets/sherka.png";
+import zebdaa3malnaImg from "/assets/a3malna.png";
+
 const LeftContent = ({ activeTab }) => {
-  
+  // Animation variants based on activeTab
+  const animationProps =
+    activeTab === 0
+      ? {
+          initial: { y: -800, opacity: 0, scale: 0.8 },
+          animate: { y: 0, opacity: 1, scale: 1 },
+          exit: { y: 100, opacity: 0, scale: 0.8 },
+          transition: { duration: 0.7, ease: "easeInOut" },
+        }
+      : {
+          initial: { opacity: 0, x: -50 }, // Default for other tabs
+          animate: { opacity: 1, x: 0 },
+          transition: { duration: 0.5, ease: "easeInOut" },
+        };
+
   return (
-        <div className="text-white flex justify-center items-center flex-col  space-y-4 mb-8" dir="rtl">
+    <motion.div
+      className="text-white space-y-4 mb-8 w-full"
+      {...animationProps}
+      dir="rtl"
+    >
+      {activeTab === 0 ? (
+        <div className="flex flex-col items-start justify-start gap-3 mt-6">
+          <img
+            src={zebdaelsherkaImg}
+            alt="sherka"
+            className="w-[150px] h-[130px]"
+          />
+          <img
+            src={zebdaa3malnaImg}
+            alt="a3malna"
+            className="w-[150px] h-[130px]"
+          />
+        </div>
+      ) : activeTab === 1 ? (
+        null
+      ) : activeTab === 2 ? (
+        <div>2</div>
+      ) : activeTab === 3 ? (
+        <div>3</div>
+      ) : (
+        <div>
           <h2 className="text-2xl font-bold text-orange-900 mb-4">
-            وش معنى <span className="text-white">ريب</span> ؟
+            وش معنى <span className="text-white">ريب</span>؟
           </h2>
-          <div className="text-[#FFFFFF] leading-relaxed space-y-3 text-[15px] w-[239px] h-[176px]">
-            <span>
-              الصراحة ما يهم وش معنى ريب، لكن كل اللي يهمنا ايش ريب تسوي. حنّا
-              وكالة حلول إبداعية، نشتغل على أي تحدي أياً كان نوعه، سواء كان حملة
-              إعلامية، تواصل داخلي، إطلاق منتج، فعالية، محتوى تفاعلي، أو حتى
-              تغيير صورة ذهنية. من أول الفكرة حتى تنفيذها. مطبخنا مو زي أي مطبخ،
-              الزبدة: ريب في وسط زحمة الأفكار، تعطيك الزبدة. مو أكثر، ولا أقل.
-            </span>
+          <div className="text-gray-300 leading-relaxed space-y-3 text-[11px] md:text-[14px]">
+            <p>الصراحة ما يهم وش معنى ريب، لكن خل الي</p>
+            <p>يهمنا ايش ريب تسوي</p>
+            <p>حنا وكالة حلول إبداعية، نشتغل على اى تحدى ايا</p>
+            <p>كان نوعه سواء كان حملة إعلانية، تواصل داخلي،</p>
+            <p>إطلاق منتج فاعلية، محتوى تفاعلى،او حتى تغيير</p>
+            <p>صورة ذهنية، من أول الفكرة حق تنفيذها</p>
+            <p>مطلعينها مو زى اى مطبخ، الزبدة ريب في وسط</p>
+            <p>زحمة الأفكار تعطيك الزبدة مو أكثر ولا اقل</p>
           </div>
         </div>
+      )}
+    </motion.div>
   );
 };
 

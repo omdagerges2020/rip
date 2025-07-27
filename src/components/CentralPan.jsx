@@ -1,121 +1,12 @@
-import { AnimatePresence, motion } from "framer-motion";
-import zebdaImage from "/assets/zebda.png";
-import ClientLayout from "./clientTab/ClientLayout";
-import OurWorksLayout from "./ourWorks/OurWorksLayout";
+import { motion, AnimatePresence } from "framer-motion";
+import DefaultCircle from "./DefaultCircle";
+import logoabovevideoImg from "/assets/zebdaa3malna.png";
+import ClientsCircle from "./ClientsCircle";
 
-const CentralPan = ({ activeTab }) => {
+
+const CentralPan = ({ activeTab, animationState, setAnimationState }) => {
   return (
-    // <div className="relative w-80 h-80">
-    //   <AnimatePresence mode="wait">
-    //     {activeTab === -1 ? (
-    //       // Default main page circle
-    //       <div
-    //         key="default"
-    //         className="w-full h-full"
-    //       >
-    //         <img src={defaultContentImg} />
-    //       </div>
-    //     ) : activeTab === 0 ? (
-    //       // Tab 1 - زبدة أعمالنا
-    //       <div
-    //         key="tab0"
-    //         className="w-full h-full"
-    //       >
-    //         <WorksCircle />
-    //       </div>
-    //     ) : activeTab === 1 ? (
-    //       // Tab 2 - زبدة عملائنا
-    //       <div
-    //         key="tab1"
-    //         className="w-full h-full"
-    //       >
-    //         <ClientsCircle />
-    //       </div>
-    //     ) : activeTab === 2 ? (
-    //       // Tab 3 - زبدة فريقنا
-    //       <div
-    //         key="tab2"
-    //         className="w-full h-full"
-    //       >
-    //         <TeamCircle />
-    //       </div>
-    //     ) : (
-    //       // Tab 4 - ليج الزبدة ؟ كلمنا
-    //       <div
-    //         key="tab3"
-    //         className="w-full h-full"
-    //       >
-    //         <ContactCircle />
-    //       </div>
-    //     )}
-    //   </AnimatePresence>
-    // </div>
-    // <div className="relative w-80 h-80">
-    //   <AnimatePresence mode="wait">
-    //     {activeTab === -1 ? (
-    //       // Default main page circle
-    //       <motion.div
-    //         key="default"
-    //         initial={{ y: -100, opacity: 0, scale: 0.8 }}
-    //         animate={{ y: 0, opacity: 1, scale: 1 }}
-    //         exit={{ y: 100, opacity: 0, scale: 0.8 }}
-    //         transition={{ duration: 0.6, ease: "easeInOut" }}
-    //         className="w-full h-full"
-    //       >
-    //         <DefaultCircle />
-    //       </motion.div>
-    //     ) : activeTab === 0 ? (
-    //       // Tab 1 - زبدة أعمالنا
-    //       <motion.div
-    //         key="tab0"
-    //         initial={{ y: -100, opacity: 0, scale: 0.8 }}
-    //         animate={{ y: 0, opacity: 1, scale: 1 }}
-    //         exit={{ y: 100, opacity: 0, scale: 0.8 }}
-    //         transition={{ duration: 0.6, ease: "easeInOut" }}
-    //         className="w-full h-full"
-    //       >
-    //         <WorksCircle />
-    //       </motion.div>
-    //     ) : activeTab === 1 ? (
-    //       // Tab 2 - زبدة عملائنا
-    //       <motion.div
-    //         key="tab1"
-    //         initial={{ y: -100, opacity: 0, scale: 0.8 }}
-    //         animate={{ y: 0, opacity: 1, scale: 1 }}
-    //         exit={{ y: 100, opacity: 0, scale: 0.8 }}
-    //         transition={{ duration: 0.6, ease: "easeInOut" }}
-    //         className="w-full h-full"
-    //       >
-    //         <ClientsCircle />
-    //       </motion.div>
-    //     ) : activeTab === 2 ? (
-    //       // Tab 3 - زبدة فريقنا
-    //       <motion.div
-    //         key="tab2"
-    //         initial={{ y: -100, opacity: 0, scale: 0.8 }}
-    //         animate={{ y: 0, opacity: 1, scale: 1 }}
-    //         exit={{ y: 100, opacity: 0, scale: 0.8 }}
-    //         transition={{ duration: 0.6, ease: "easeInOut" }}
-    //         className="w-full h-full"
-    //       >
-    //         <TeamCircle />
-    //       </motion.div>
-    //     ) : (
-    //       // Tab 4 - ليج الزبدة ؟ كلمنا
-    //       <motion.div
-    //         key="tab3"
-    //         initial={{ y: -100, opacity: 0, scale: 0.8 }}
-    //         animate={{ y: 0, opacity: 1, scale: 1 }}
-    //         exit={{ y: 100, opacity: 0, scale: 0.8 }}
-    //         transition={{ duration: 0.6, ease: "easeInOut" }}
-    //         className="w-full h-full"
-    //       >
-    //         <ContactCircle />
-    //       </motion.div>
-    //     )}
-    //   </AnimatePresence>
-    // </div>
-    <div className="relative w-80 h-80">
+    <div className="w-[600px] h-[500px]">
       <AnimatePresence mode="wait">
         {activeTab === -1 ? (
           // Default main page circle
@@ -124,22 +15,24 @@ const CentralPan = ({ activeTab }) => {
             initial={{ y: -100, opacity: 0, scale: 0.8 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 100, opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="w-full h-full"
           >
-            <DefaultCircle />
+            <DefaultCircle
+              animationState={animationState}
+              setAnimationState={setAnimationState}
+            />
           </motion.div>
         ) : activeTab === 0 ? (
           // Tab 1 - زبدة أعمالنا
           <motion.div
             key="tab0"
-            initial={{ y: -100, opacity: 0, scale: 0.8 }}
+            initial={{ y: -400, opacity: 0, scale: 0.8 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 100, opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="w-full h-full"
+            transition={{ duration: 0.7, ease: "easeInOut" }}
           >
-            <OurWorksLayout />
+            <WorksVideo />
           </motion.div>
         ) : activeTab === 1 ? (
           // Tab 2 - زبدة عملائنا
@@ -151,10 +44,22 @@ const CentralPan = ({ activeTab }) => {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="w-full h-full"
           >
-            <ClientLayout />
+            <ClientsCircle />
           </motion.div>
-        ) : activeTab === 3 ? (
-          // Tab 4 - ليج الزبدة ؟ كلمنا (Tab 3 in 0-indexed array)
+        ) : activeTab === 2 ? (
+          // Tab 3 - زبدة فريقنا
+          <motion.div
+            key="tab2"
+            initial={{ y: -100, opacity: 0, scale: 0.8 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            exit={{ y: 100, opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="w-full h-full"
+          >
+            <TeamCircle />
+          </motion.div>
+        ) : (
+          // Tab 4 - ليج الزبدة ؟ كلمنا
           <motion.div
             key="tab3"
             initial={{ y: -100, opacity: 0, scale: 0.8 }}
@@ -165,56 +70,66 @@ const CentralPan = ({ activeTab }) => {
           >
             <ContactCircle />
           </motion.div>
-        ) : null}
+        )}
       </AnimatePresence>
     </div>
   );
 };
 
-// Default circle - main page
-const DefaultCircle = () => (
-  <div className="w-full h-full  border-1 border-gray-700 relative overflow-hidden">
-    {/* Main content */}
-    <div
-      className="absolute inset-4  rounded-full flex items-center mt-10 justify-center"
-      style={{
-        backgroundImage: `url('/assets/tasa.png')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div
-        className=" text-gray-900 absolute -top-[10px] -right-[5px] px-4 py-2 rounded-lg font-bold text-lg transform -rotate-10 text-center"
-        dir="rtl"
+const WorksVideo = () => (
+  <div className="relative">
+    {/* Video Rectangle */}
+    <div className="relative min-w-[500px] bg-gray-900 p-2 rounded-xl overflow-hidden shadow-lg border border-gray-700">
+      <video
+        className="w-full h-full object-cover rounded-lg"
+        controls
+        poster="/placeholder.svg?height=208&width=384&text=Video+Poster"
+        autoPlay
+        loop
       >
-        <img src={zebdaImage} alt="zebda" width={200} />
+        <source src="/public/assets/awesome-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      {/* Play button overlay (optional) */}
+      <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/20 transition-colors">
+        <div className="w-8 h-8 bg-gray-600/70 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors cursor-pointer">
+          <svg
+            className="w-6 h-6 text-white"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path d="M8 5v10l8-5-8-5z" />
+          </svg>
+        </div>
       </div>
+    </div>
+    <div className="absolute top-[-40px] left-[200px] text-white px-3 py-1 rounded-lg text-sm">
+      <img src={logoabovevideoImg} alt="شوريل زبدة اعمالنا" />
     </div>
   </div>
 );
 
-// Tab 1 - Works circle
-const WorksCircle = () => (
-  <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-800 to-blue-900 border-4 border-blue-700 relative overflow-hidden shadow-2xl">
-    <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-900 to-black flex items-center justify-center">
+
+// Tab 3 - Team circle
+const TeamCircle = () => (
+  <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-800 to-purple-900 border-4 border-purple-700 relative overflow-hidden shadow-2xl">
+    <div className="absolute inset-4 rounded-full bg-gradient-to-br from-purple-900 to-black flex items-center justify-center">
       <div className="text-center text-white" dir="rtl">
-        <div className="bg-blue-500 text-white px-3 py-1 rounded-lg font-bold text-sm mb-2">
-          أعمالنا
+        <div className="bg-purple-500 text-white px-3 py-1 rounded-lg font-bold text-sm mb-2">
+          فريقنا
         </div>
         <h3 className="text-yellow-400 font-bold text-xl mb-2">
-          مشاريع إبداعية
+          خبراء محترفون
         </h3>
         <p className="text-gray-300 text-sm">
-          تصميم وتطوير
+          فريق متخصص
           <br />
-          حلول متكاملة
+          في الإبداع
         </p>
       </div>
     </div>
   </div>
 );
-
-
 
 // Tab 4 - Contact circle
 const ContactCircle = () => (
