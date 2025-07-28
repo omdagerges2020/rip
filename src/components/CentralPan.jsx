@@ -1,13 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion";
 import DefaultCircle from "./DefaultCircle";
 import logoabovevideoImg from "/assets/zebdaa3malna.png";
-import ClientsCircle from "./ClientsCircle";
 import TeamCircle from "./TeamCircle";
+import ContactForm from "./ContactForm";
+import ClientsCircle from "./ClientsCircle";
 
 
 const CentralPan = ({ activeTab, animationState, setAnimationState }) => {
   return (
-    <div className={`${activeTab === -1 ? "w-[600px]" : "min-w-[600px]"} min-h-screen`} >
+    <div className={`${activeTab === -1 ? "w-[600px]" : activeTab === 3 ? "min-w-[300px]" : "min-w-[600px]"} min-h-screen`} >
       <AnimatePresence mode="wait">
         {activeTab === -1 ? (
           // Default main page circle
@@ -69,7 +70,7 @@ const CentralPan = ({ activeTab, animationState, setAnimationState }) => {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="w-full h-full"
           >
-            <ContactCircle />
+            <ContactForm />
           </motion.div>
         )}
       </AnimatePresence>
@@ -150,5 +151,6 @@ const ContactCircle = () => (
     </div>
   </div>
 );
+
 
 export default CentralPan;

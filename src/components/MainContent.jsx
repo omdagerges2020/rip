@@ -25,6 +25,8 @@ const MainContent = ({
     } else if (activeTab === 2) {
       // team tab - normal spacing
       return "grid grid-cols-1 lg:grid-cols-[1fr_3fr_1fr] gap-8 items-start mt-16";
+    }else if (activeTab === 3) {
+      return "grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-8 items-start mt-8";
     } else {
       // Default tabs - normal spacing
       return "grid grid-cols-1 lg:grid-cols-3 gap-8 items-start";
@@ -60,7 +62,7 @@ const MainContent = ({
       <div className={getGridClasses()}>
         {/* Left side - Tabs */}
         <div
-          className={`order-1 lg:order-1 lg:flex flex-col min-h-[300px] justify-center items-center${
+          className={`order-1 lg:order-1 lg:flex flex-col ${activeTab === 3 ? "min-h-[600px]" : "min-h-[300px]"}  justify-center items-center${
             showTabs ? "block" : "hidden md:hidden"
           }`}
         >

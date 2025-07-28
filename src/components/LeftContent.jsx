@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import zebdaelsherkaImg from "/assets/sherka.png";
 import zebdaa3malnaImg from "/assets/a3malna.png";
+import contactImg from "/assets/contact.png";
 
 const LeftContent = ({ activeTab }) => {
   // Animation variants based on activeTab
@@ -42,7 +43,9 @@ const LeftContent = ({ activeTab }) => {
       ) : activeTab === 2 ? (
         null
       ) : activeTab === 3 ? (
-        <div>3</div>
+        <div className="flex justify-center items-center h-[600px]">
+          <img src={contactImg} alt="contact us" />
+        </div>
       ) : (
         <div>
           <h2 className="text-2xl font-bold text-orange-900 mb-4">
