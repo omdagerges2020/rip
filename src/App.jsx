@@ -125,11 +125,9 @@ function App() {
           setViewMode={setViewMode}
         />
         <Footer />
-        {viewMode === "default" && (
-          <div className="absolute bottom-[2px] left-0 p-4">
+          <div className="hidden absolute bottom-[2px] left-0 p-4">
             <img src={lionImg} alt="lion" width={100} />
           </div>
-        )}
       </div>
     </div>
   );

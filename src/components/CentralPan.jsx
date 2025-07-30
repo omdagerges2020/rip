@@ -10,7 +10,7 @@ const CentralPan = ({ activeTab, animationState, setAnimationState }) => {
     <div
       className={`
     mx-auto
-    min-h-[200px] 
+    min-h-[300px] 
     sm:h-[400px] 
     md:max-h-[800px] 
     lg:h-[600px]

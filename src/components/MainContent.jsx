@@ -122,9 +122,7 @@ const MainContent = ({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className={`order-3 lg:order-3  lg:flex justify-center xl:justify-start ${
-                viewMode === "tabs" && window.innerWidth < 1024 ? "hidden" : ""
-              }`}
+              className={`order-3 hidden lg:flex justify-center xl:justify-start`}
             >
               <LeftContent activeTab={activeTab} />
             </motion.div>
