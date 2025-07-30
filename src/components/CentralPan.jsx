@@ -8,7 +8,7 @@ import ClientsCircle from "./ClientsCircle";
 
 const CentralPan = ({ activeTab, animationState, setAnimationState }) => {
   return (
-    <div className={`${activeTab === -1 ? "w-[600px]" : activeTab === 3 ? "min-w-[300px]" : "min-w-[600px]"} min-h-screen`} >
+    <div className={`${activeTab === -1 ? "w-[600px]" : activeTab === 3 ? "min-w-[300px]" : "min-w-[600px]"} h-[350px] xl:h-screen`} >
       <AnimatePresence mode="wait">
         {activeTab === -1 ? (
           // Default main page circle

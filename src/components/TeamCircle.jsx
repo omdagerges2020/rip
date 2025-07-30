@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import bgImage from "/assets/Frame 1707482067.png";
 import teammember1img from "/assets/teammember1.png";
 import teammember2img from "/assets/teammember2.png";
@@ -9,9 +10,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { BiSkipPrevious } from "react-icons/bi";
 import { MdSkipNext } from "react-icons/md";
-import TeamLeftContentBottom from "./teamTab/TeamLeftContentBottom";
-import TeamMemberCard from "./teamTab/TeamMemberCard";
 import TeamLeftContentTop from "./teamTab/TeamLeftContentTop";
+import TeamMemberCard from "./teamTab/TeamMemberCard";
+import TeamLeftContentBottom from "./teamTab/TeamLeftContentBottom";
 
 const TeamCircle = () => {
   const teamMembers = [
@@ -24,10 +25,38 @@ const TeamCircle = () => {
     { name: "الاسم", title: "مصمم جرافيك", image: "/images/team-member-7.png" },
     { name: "الاسم", title: "مصمم جرافيك", image: "/images/team-member-8.png" },
   ];
-  return (
-    // <div className="w-full rounded-md  relative overflow-hidden shadow-2xl border-[1px]">
 
-    // </div>
+  // State to track which profile is hovered (null, "islam", or "abdullah")
+  const [hoveredProfile, setHoveredProfile] = useState(null);
+
+  // Framer Motion variants for the info panel
+  const infoVariants = {
+    initial: {
+      opacity: 0,
+      x: -200, // Slide in from top-left
+      y: -400,
+    },
+    animate: {
+      opacity: 1,
+      x: 100,
+      y: -50,
+      transition: {
+        duration: 0.7, // Smooth and elegant
+        ease: [0.8, 0, 0.2, 1], // Soft easing
+      },
+    },
+    exit: {
+      opacity: 0,
+      x: -100,
+      y: -50,
+      transition: {
+        duration: 0.5,
+        ease: [0.8, 0, 0.2, 1],
+      },
+    },
+  };
+
+  return (
     <motion.div
       className="w-full flex flex-col gap-6"
       initial={{ opacity: 0, y: -100 }}
@@ -40,40 +69,86 @@ const TeamCircle = () => {
         {/* Co-founders section */}
         <div className="flex-1 order-2 xl:order-1 w-full flex justify-center items-center">
           <div
-            className="w-full
-            min-h-[120px] h-[120px] md:h-[150px] xl:h-[215px] rounded-md bg-cover bg-center relative gap-5 mx-auto"
+            className="w-full min-h-[120px] h-[120px] md:h-[150px] xl:h-[215px] rounded-md bg-cover bg-center relative mx-auto"
             style={{ backgroundImage: `url(${bgImage})` }}
           >
-            <img
-              src={teammember1img}
-              alt="إسلام شاكر"
-              className="w-[800px] scale-[150%] xl:w-[400px] h-[130px] xl:h-[180px] xl:top-[-40px] top-[-30px] xl:left-[130px] left-[-80px] absolute"
-            />
-            <img
-              src={teammember2img}
-              alt="عبدالله عسيري"
-              className="w-[800px] scale-[150%] xl:w-[400px] h-[130px] xl:h-[180px] top-[-30px]  xl:top-[-50px] left-[80px] xl:left-[130px] absolute"
-            />
-            <div className="flex flex-col absolute bottom-[10px] left-[10px] lg:left-[70px] xl:bottom-[5px] xl:left-[160px]">
-              <h2 className="xl:bg-orange-900/70 bg-orange-900 px-4 xl:px-7 text-center w-fit text-white -rotate-3 transition-transform duration-500">
-                إسلام شاكر
-              </h2>
-              <span className="xl:bg-white/70 bg-white relative left-[2px] xl:left-[-40px] top-[-3px] xl:top-[1px] px-3 w-fit text-center py-[.5em] rotate-5 xl:rotate-4 transition-transform duration-500 text-[5px] xl:text-[6px] font-bold">
-                Co-founder &CCO
-              </span>
+            {/* Profile 1: إسلام شاكر */}
+            <div
+              className="group absolute top-[-30px] left-[10%] md:left-[15%] xl:left-[38%] flex flex-col items-center"
+              onMouseEnter={() => setHoveredProfile("islam")}
+              onMouseLeave={() => setHoveredProfile(null)}
+            >
+              <img
+                src={teammember1img}
+                alt="إسلام شاكر، المؤسس المشارك"
+                className="w-24 h-24 md:w-32 md:h-32 scale-[150%] xl:w-40 xl:h-40 object-cover transition-transform duration-500 group-hover:scale-[170%]"
+              />
+              <div className="flex flex-col mt-7 ml-[-12em] transition-transform duration-500 group-hover:-translate-y-[7em]">
+                <h2 className="bg-orange-900 xl:px-5 text-center w-fit text-white -rotate-3 text-sm xl:text-base font-bold">
+                  إسلام شاكر
+                </h2>
+                <span className="bg-white px-3 py-[.3em] w-fit text-center text-[8px] xl:text-[8px] rotate-4 font-bold">
+                  Co-founder & CCO
+                </span>
+              </div>
+              <AnimatePresence>
+                {hoveredProfile === "islam" && (
+                  <motion.div
+                    className="absolute z-10 flex flex-col gap-2 top-[120px] md:top-[150px] w-[250px] border-[1px] border-gray-500 xl:top-[180px] right-[220px] bg-gray-900/80 text-white p-4 rounded-lg max-w-xs text-sm"
+                    variants={infoVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                  >
+                    <span>يقود العمليات ويشرف على تنفيذ المشاريع من الفكرة حتى التسليم زبخبرة تجمع بين الاخراج والابداع والادارة</span>
+                    <span>يحرص ان كل شىء يطلع من ريب يحمل الزبدة بوضوح وباعلى جودة</span>
+                    <span>e.shaker@reprofilm.com</span>
+                    <span>+966 532 6423 75</span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-            <div className="flex flex-col absolute bottom-[5px] xl:bottom-[5px] right-[5px] lg:right-[30px] xl:right-[160px]">
-              <h2 className="xl:bg-orange-900/90  bg-orange-900 px-5 text-center w-fit rotate-1 transition-transform duration-500 text-white font-bold">
-                عبد الله عسيرى
-              </h2>
-              <span className="xl:bg-white/70 bg-white px-3 relative left-[-20px] top-[-3px] py-1 -rotate-3 w-fit text-center text-[7px] font-bold">
-                Co-founder &CCO
-              </span>
+
+            {/* Profile 2: عبدالله عسيري */}
+            <div
+              className="group absolute top-[-30px] right-[10%] md:right-[15%] xl:right-[36%] flex flex-col items-center"
+              onMouseEnter={() => setHoveredProfile("abdullah")}
+              onMouseLeave={() => setHoveredProfile(null)}
+            >
+              <img
+                src={teammember2img}
+                alt="عبدالله عسيري، المؤسس المشارك"
+                className="w-24 h-24 md:w-32 md:h-32 scale-[150%]  xl:w-40 xl:h-40 object-cover transition-transform duration-500 group-hover:scale-[200%]"
+              />
+              <div className="flex flex-col mt-7  transition-transform mr-[-11em] duration-500 group-hover:-translate-y-[7em]">
+                <h2 className="bg-orange-900/90 px-5 text-center w-fit text-white rotate-1 text-sm xl:text-base font-bold">
+                  عبدالله عسيري
+                </h2>
+                <span className="bg-white px-3  py-[.3em] w-fit text-center text-[8px] mr-3  xl:text-[8px]  -rotate-3 font-bold">
+                  Co-founder & CCO
+                </span>
+              </div>
+              <AnimatePresence>
+                {hoveredProfile === "abdullah" && (
+                  <motion.div
+                    className="absolute border-[1px] border-gray-500 flex flex-col gap-2 top-[120px] md:top-[150px] xl:top-[180px] right-0 bg-gray-900/90 text-white p-4 rounded-lg w-[250px] text-[10px]"
+                    variants={infoVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                  >
+                    <span>يركّز على تطوير العلاقات الاستراتيجية، واستكشاف الفرص، ومتابعة رضا العملاء.</span>
+                    <span>يفهم السوق، ويقود نمو ريب بثقة، يحرص إن الشراكة ما تنتهي عند التسليم، بل تبدأ من عنده.</span>
+                    <span>a.assiri@reprofilm.com</span>
+                    <span>+966 501 8024 94</span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
         {/* TeamLeftContentTop */}
-        <div className="w-full xl:basis-[20%]  flex flex-col justify-start order-1 xl:order-2 items-start">
+        <div className="w-full xl:basis-[20%] flex flex-col justify-start order-1 xl:order-2 items-start">
           <TeamLeftContentTop />
         </div>
       </div>
@@ -85,12 +160,11 @@ const TeamCircle = () => {
             <Swiper
               modules={[Navigation, Pagination]}
               spaceBetween={20}
-              // slidesPerView={6}
               breakpoints={{
-                0: { slidesPerView: 3 }, // mobile (optional, or set to 2)
-                480: { slidesPerView: 3 }, // small screens
-                768: { slidesPerView: 3 }, // md screens
-                1024: { slidesPerView: 6 }, // lg and up
+                0: { slidesPerView: 3 },
+                480: { slidesPerView: 3 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 6 },
               }}
               navigation={{
                 nextEl: ".custom-next",
@@ -122,8 +196,7 @@ const TeamCircle = () => {
         </div>
       </div>
     </motion.div>
-  );
+  )
 };
 
 export default TeamCircle;
-

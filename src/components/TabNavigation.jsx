@@ -7,7 +7,7 @@ const tabs = [
   "تبى الزبدة ؟ كلمنا",
 ];
 
-const TabNavigation = ({ activeTab, handleTabChange }) => {
+const TabNavigation = ({ activeTab, handleTabChange, viewMode }) => {
   // Animation variants based on activeTab
   const animationProps =
     activeTab === 0
@@ -23,7 +23,7 @@ const TabNavigation = ({ activeTab, handleTabChange }) => {
         };
 
   return (
-    <div className="flex flex-col space-y-4 justify-center items-end" dir="rtl">
+    <div className={`flex flex-col space-y-4 justify-center items-end dir="rtl"`}>
       {tabs.map((tab, index) => (
         <motion.button
           key={index}
