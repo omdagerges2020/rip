@@ -5,10 +5,29 @@ import TeamCircle from "./TeamCircle";
 import ContactForm from "./ContactForm";
 import ClientsCircle from "./ClientsCircle";
 
-
 const CentralPan = ({ activeTab, animationState, setAnimationState }) => {
   return (
-    <div className={`${activeTab === -1 ? "w-[600px]" : activeTab === 3 ? "min-w-[300px]" : "min-w-[600px]"} h-[350px] xl:h-screen`} >
+    <div
+      className={`
+    mx-auto
+    min-h-[200px] 
+    sm:h-[400px] 
+    md:max-h-[800px] 
+    lg:h-[600px]
+    xl:h-screen
+    ${
+      activeTab === -1
+        ? "w-[90%] sm:w-[500px] md:w-[600px]"
+        : activeTab === 0
+        ? "w-[90%] sm:w-[500px] md:w-[700px] lg:w-[600px]"
+        : activeTab === 1
+        ? "w-[90%] sm:w-[500px] md:w-[650px]"
+        : activeTab === 2
+        ? "w-[90%] sm:w-[500px] md:w-[600px]"
+        : "w-[90%] sm:w-[400px] md:w-[500px]"
+    }
+  `}
+    >
       <AnimatePresence mode="wait">
         {activeTab === -1 ? (
           // Default main page circle
@@ -78,23 +97,57 @@ const CentralPan = ({ activeTab, animationState, setAnimationState }) => {
   );
 };
 
+// const WorksVideo = () => (
+//   <div className="relative">
+//     {/* Video Rectangle */}
+//     <div className="relative min-w-[500px] bg-gray-900 p-2 rounded-xl overflow-hidden shadow-lg border border-gray-700">
+//       <video
+//         className="w-full h-full object-cover rounded-lg"
+//         controls
+//         poster="/placeholder.svg?height=208&width=384&text=Video+Poster"
+//         autoPlay
+//         loop
+//       >
+//         <source src="/public/assets/awesome-video.mp4" type="video/mp4" />
+//         Your browser does not support the video tag.
+//       </video>
+//       {/* Play button overlay (optional) */}
+//       <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/20 transition-colors">
+//         <div className="w-8 h-8 bg-gray-600/70 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors cursor-pointer">
+//           <svg
+//             className="w-6 h-6 text-white"
+//             fill="currentColor"
+//             viewBox="0 0 20 20"
+//           >
+//             <path d="M8 5v10l8-5-8-5z" />
+//           </svg>
+//         </div>
+//       </div>
+//     </div>
+//     <div className="absolute top-[-40px] left-[200px] text-white px-3 py-1 rounded-lg text-sm">
+//       <img src={logoabovevideoImg} alt="شوريل زبدة اعمالنا" />
+//     </div>
+//   </div>
+// );
+
 const WorksVideo = () => (
-  <div className="relative">
+  <div className="relative w-full flex justify-center items-start">
     {/* Video Rectangle */}
-    <div className="relative min-w-[500px] bg-gray-900 p-2 rounded-xl overflow-hidden shadow-lg border border-gray-700">
+    <div className="relative w-full max-w-[800px] bg-gray-900 p-2 rounded-xl overflow-hidden shadow-lg border border-gray-700">
       <video
-        className="w-full h-full object-cover rounded-lg"
+        className="w-full h-auto object-cover rounded-lg"
         controls
         poster="/placeholder.svg?height=208&width=384&text=Video+Poster"
         autoPlay
         loop
       >
-        <source src="/public/assets/awesome-video.mp4" type="video/mp4" />
+        <source src="/assets/awesome-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
       {/* Play button overlay (optional) */}
-      <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/20 transition-colors">
-        <div className="w-8 h-8 bg-gray-600/70 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors cursor-pointer">
+      <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/20 transition-colors pointer-events-none">
+        <div className="w-8 h-8 bg-gray-600/70 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
           <svg
             className="w-6 h-6 text-white"
             fill="currentColor"
@@ -105,12 +158,17 @@ const WorksVideo = () => (
         </div>
       </div>
     </div>
-    <div className="absolute top-[-40px] left-[200px] text-white px-3 py-1 rounded-lg text-sm">
-      <img src={logoabovevideoImg} alt="شوريل زبدة اعمالنا" />
+
+    {/* Logo above video */}
+    <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-white">
+      <img
+        src={logoabovevideoImg}
+        alt="شوريل زبدة اعمالنا"
+        className="w-32 h-auto"
+      />
     </div>
   </div>
 );
-
 
 // Tab 3 - Team circle
 // const TeamCircle = () => (
@@ -151,6 +209,5 @@ const ContactCircle = () => (
     </div>
   </div>
 );
-
 
 export default CentralPan;

@@ -104,7 +104,7 @@ function App() {
   
 
   return (
-    <div className="min-h-screen relative">
+    <div className="relative">
       <div className="absolute inset-0 bg-custom-gradient"></div>
       <div className="absolute inset-0 bg-[url('/assets/BG.png')] bg-cover bg-center opacity-50"></div>
       <div className="absolute overflow-hidden pointer-events-none opacity-50">

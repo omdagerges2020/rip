@@ -26,7 +26,7 @@ const LeftContent = ({ activeTab }) => {
       dir="rtl"
     >
       {activeTab === 0 ? (
-        <div className="flex flex-col items-start justify-start gap-3 mt-6">
+        <div className="flex xl:flex-col md:flex-row justify-center md:justify-center xl:items-start gap-3 mt-6">
           <img
             src={zebdaelsherkaImg}
             alt="sherka"
