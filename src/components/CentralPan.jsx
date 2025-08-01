@@ -10,9 +10,9 @@
 //     <div
 //       className={`
 //     mx-auto
-//     min-h-[300px] 
-//     sm:h-[400px] 
-//     md:max-h-[800px] 
+//     min-h-[300px]
+//     sm:h-[400px]
+//     md:max-h-[800px]
 //     lg:h-[600px]
 //     xl:h-screen
 //     ${
@@ -137,7 +137,6 @@
 //   </div>
 // );
 
-
 // export default CentralPan;
 import { motion, AnimatePresence } from "framer-motion";
 import DefaultCircle from "./DefaultCircle";
@@ -145,8 +144,14 @@ import logoabovevideoImg from "/assets/zebdaa3malna.png";
 import TeamCircle from "./TeamCircle";
 import ContactForm from "./ContactForm";
 import ClientsCircle from "./ClientsCircle";
+import ClientsCircleMobile from "./ClientsCircleMobile";
+import { useMediaQuery } from "@react-hook/media-query";
 
 const CentralPan = ({ activeTab, animationState, setAnimationState }) => {
+  const isMobile = useMediaQuery("(max-width: 640px)");
+  const isTablet = useMediaQuery("(min-width: 641px) and (max-width: 1024px)");
+  const isDesktop = useMediaQuery("(min-width: 1025px)");
+
   return (
     <div className="w-full max-w-4xl mx-auto">
       <AnimatePresence mode="wait">
@@ -182,9 +187,9 @@ const CentralPan = ({ activeTab, animationState, setAnimationState }) => {
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 50, opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="w-full"
+            className="w-full flex justify-center"
           >
-            <ClientsCircle />
+            {isMobile ? <ClientsCircleMobile /> : <ClientsCircle />}
           </motion.div>
         ) : activeTab === 2 ? (
           <motion.div
@@ -229,14 +234,22 @@ const WorksVideo = () => (
       </video>
       <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/20 transition-colors pointer-events-none">
         <div className="w-8 h-8 bg-gray-600/70 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
-          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+          <svg
+            className="w-6 h-6 text-white"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
             <path d="M8 5v10l8-5-8-5z" />
           </svg>
         </div>
       </div>
     </div>
     <div className="absolute -top-8 left-1/2 -translate-x-1/2">
-      <img src={logoabovevideoImg} alt="شوريل زبدة اعمالنا" className="w-24 sm:w-32 h-auto" />
+      <img
+        src={logoabovevideoImg}
+        alt="شوريل زبدة اعمالنا"
+        className="w-24 sm:w-32 h-auto"
+      />
     </div>
   </div>
 );

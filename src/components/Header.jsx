@@ -41,6 +41,19 @@ import headerLogo from "/assets/headerlogo.png";
 const Header = ({ onLogoClick, onBurgerClick, viewMode }) => {
   return (
     <header className="flex justify-between items-center px-4 py-6 sm:px-6 lg:justify-center lg:gap-8">
+      <img
+        src={headerLogo}
+        alt="logo header"
+        className="block lg:hidden h-8 sm:h-10"
+      />
+      <button
+        onClick={onLogoClick}
+        className="text-white font-bold text-2xl tracking-wider hover:scale-105 transition-transform"
+        aria-label="Reset to default view"
+      >
+        <img src={logoImg} alt="rep logo" className="h-8 sm:h-10" />
+      </button>
+
       <button
         className="block lg:hidden"
         onClick={onBurgerClick}
@@ -52,18 +65,6 @@ const Header = ({ onLogoClick, onBurgerClick, viewMode }) => {
           <rect y="17" width="24" height="3" rx="1.5" />
         </svg>
       </button>
-      <button
-        onClick={onLogoClick}
-        className="text-white font-bold text-2xl tracking-wider hover:scale-105 transition-transform"
-        aria-label="Reset to default view"
-      >
-        <img src={logoImg} alt="rep logo" className="h-8 sm:h-10" />
-      </button>
-      <img
-        src={headerLogo}
-        alt="logo header"
-        className="block lg:hidden h-8 sm:h-10"
-      />
     </header>
   );
 };

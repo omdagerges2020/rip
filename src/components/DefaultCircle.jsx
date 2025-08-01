@@ -1,331 +1,58 @@
-// // import zebdatasa from "/assets/Butter.png";
-// // import { motion } from "framer-motion";
-// // import samnaImg from "/assets/samna.png";
-
-// // const DefaultCircle = ({animationState, setAnimationState}) => {
-
-// //   // Animation variants for the button
-// //   const buttonVariants = {
-// //     initial: {
-// //       scale: 1,
-// //       rotate: 10,
-// //       x: 0,
-// //       y: -150,
-// //     },
-// //     clicked: {
-// //       scale: 0.4, // Zoom out
-// //       rotate: 140, // Rotate to opposite direction
-// //       x: -90, // Move horizontally
-// //       y: -190, // Move vertically
-// //       transition: {
-// //         duration: 0.5,
-// //         ease: "easeInOut",
-// //       },
-// //     },
-// //     clicked2: {
-// //       scale: 0.3, // Different zoom
-// //       rotate: 300, // Neutral rotation
-// //       x: 100, // Move horizontally to the right
-// //       y: -90, // Move downwards (south)
-// //       transition: {
-// //         duration: 0.5,
-// //         ease: "easeInOut",
-// //       },
-// //     },
-// //      clicked3: {
-// //       scale: 0, // Different zoom
-// //       rotate: 350, // Rotate to the left
-// //       x: -5, // Move horizontally to the left
-// //       y: 70, // Move downwards (south)
-// //       transition: {
-// //         duration: 0.5,
-// //         ease: 'easeInOut',
-// //       },
-// //     },
-// //   };
-
-// //   // Animation variants for the smoke image
-// //   const smokeVariants = {
-// //     initial: {
-// //       x: -10,
-// //       y: -70,
-// //     },
-// //     clicked: {
-// //       scale: 0.5,
-// //       x: -120, // Move horizontally to the right (same as button)
-// //       y: -140, // Move upwards (north, same as button)
-// //       transition: {
-// //         duration: 0.5,
-// //         ease: "easeInOut",
-// //       },
-// //     },
-// //     clicked2: {
-// //       scale: 0.4, // Different zoom out
-// //       x: 70, // Move horizontally to the right
-// //       y: -40, // Move downwards (south)
-// //       transition: {
-// //         duration: 0.5,
-// //         ease: "easeInOut",
-// //       },
-// //     },
-// //     clicked3: {
-// //       scale: 0, // Different zoom out
-// //       x: -40, // Move horizontally to the left
-// //       y: 30, // Move downwards (south)
-// //       transition: {
-// //         duration: 0.5,
-// //         ease: 'easeInOut',
-// //       },
-// //     },
-// //   };
-
-// //   const handleClick = () => {
-// //     setAnimationState((prev) => (prev + 1) % 4);
-// //   };
-
-// //   return (
-// //     <div className="w-full h-full rounded-full relative overflow-hidden">
-// //       <div
-// //         className="absolute inset-1 rounded-full flex items-center justify-center"
-// //         style={{
-// //           backgroundImage: "url(/assets/tasa.png)",
-// //           backgroundPosition: "120% 0%", // X% Y% (move right/left and up/down)
-// //           backgroundSize: "120%", // zoom in (increase), zoom out (decrease)
-// //           backgroundRepeat: "no-repeat",
-// //         }}
-// //       >
-// //         <motion.img
-// //           src={samnaImg}
-// //           alt="samna"
-// //           style={{
-// //             position: "absolute",
-// //             // top: "170px",
-// //             // left: "120px",
-// //             width: "170px",
-// //             transform: "scale(0.8)",
-// //             pointerEvents: "none",
-// //             zIndex: 1,
-// //             opacity: 1,
-// //             filter: "brightness(1.8)  contrast(1.1)",
-// //           }}
-// //           className="text-orange-900 lg:top-[130px] lg:left-[90px] xl:left-[120px] xl:top-[170px]"
-// //           variants={smokeVariants}
-// //           // initial="initial"
-// //           animate={
-// //             animationState === 0
-// //               ? "initial"
-// //               : animationState === 1
-// //               ? "clicked"
-// //               : animationState === 2
-// //               ? "clicked2"
-// //               : "clicked3"
-// //           }
-// //         />
-// //         <motion.div
-// //           variants={buttonVariants}
-// //           // initial="initial"
-// //           animate={
-// //             animationState === 0
-// //               ? 'initial'
-// //               : animationState === 1
-// //               ? 'clicked'
-// //               : animationState === 2
-// //               ? 'clicked2'
-// //               : 'clicked3'
-// //           }
-// //         >
-// //           <button
-// //             className="text-gray-900  bg-cover px-4 py-2 rounded-lg font-bold text-lg text-center absolute  lg:left-[-40px] lg:top-[-120px] xl:top-[10px] xl:left-[-10px] lg:scale-1"
-// //             style={{
-// //               position: "relative",
-// //               zIndex: 10,
-// //               opacity: 100,
-// //             }}
-// //             dir="rtl"
-// //             onClick={handleClick}
-// //           >
-// //             <img src={zebdatasa} width={200} alt="click on zebda" />
-// //           </button>
-// //         </motion.div>
-// //       </div>
-// //     </div>
-// //   );
-// // };
-
-// // export default DefaultCircle;
-
-// import zebdatasa from "/assets/Butter.png";
-// import { motion } from "framer-motion";
-// import samnaImg from "/assets/samna.png";
-
-// const DefaultCircle = ({animationState, setAnimationState}) => {
-
-//   // Animation variants for the button
-//   const buttonVariants = {
-//     initial: {
-//       scale: 1,
-//       rotate: 10,
-//       x: 0,
-//       y: -150,
-//     },
-//     clicked: {
-//       scale: 0.4, // Zoom out
-//       rotate: 140, // Rotate to opposite direction
-//       x: -90, // Move horizontally
-//       y: -190, // Move vertically
-//       transition: {
-//         duration: 0.5,
-//         ease: "easeInOut",
-//       },
-//     },
-//     clicked2: {
-//       scale: 0.3, // Different zoom
-//       rotate: 300, // Neutral rotation
-//       x: 100, // Move horizontally to the right
-//       y: -90, // Move downwards (south)
-//       transition: {
-//         duration: 0.5,
-//         ease: "easeInOut",
-//       },
-//     },
-//      clicked3: {
-//       scale: 0, // Different zoom
-//       rotate: 350, // Rotate to the left
-//       x: -5, // Move horizontally to the left
-//       y: 70, // Move downwards (south)
-//       transition: {
-//         duration: 0.5,
-//         ease: 'easeInOut',
-//       },
-//     },
-//   };
-
-//   // Animation variants for the smoke image
-//   const smokeVariants = {
-//     initial: {
-//       x: -10,
-//       y: -70,
-//     },
-//     clicked: {
-//       scale: 0.5,
-//       x: -120, // Move horizontally to the right (same as button)
-//       y: -140, // Move upwards (north, same as button)
-//       transition: {
-//         duration: 0.5,
-//         ease: "easeInOut",
-//       },
-//     },
-//     clicked2: {
-//       scale: 0.4, // Different zoom out
-//       x: 70, // Move horizontally to the right
-//       y: -40, // Move downwards (south)
-//       transition: {
-//         duration: 0.5,
-//         ease: "easeInOut",
-//       },
-//     },
-//     clicked3: {
-//       scale: 0, // Different zoom out
-//       x: -40, // Move horizontally to the left
-//       y: 30, // Move downwards (south)
-//       transition: {
-//         duration: 0.5,
-//         ease: 'easeInOut',
-//       },
-//     },
-//   };
-
-//   const handleClick = () => {
-//     setAnimationState((prev) => (prev + 1) % 4);
-//   };
-
-//   return (
-//     <div className="w-full h-full rounded-full relative overflow-hidden">
-//       <div
-//         className="absolute inset-1 rounded-full flex items-center justify-center"
-//         style={{
-//           backgroundImage: "url(/assets/tasa.png)",
-//           backgroundPosition: "120% 0%", // X% Y% (move right/left and up/down)
-//           backgroundSize: "120%", // zoom in (increase), zoom out (decrease)
-//           backgroundRepeat: "no-repeat",
-//         }}
-//       >
-//         <motion.img
-//           src={samnaImg}
-//           alt="samna"
-//           style={{
-//             position: "absolute",
-//             // top: "170px",
-//             // left: "120px",
-//             width: "170px",
-//             transform: "scale(0.8)",
-//             pointerEvents: "none",
-//             zIndex: 1,
-//             opacity: 1,
-//             filter: "brightness(1.8)  contrast(1.1)",
-//           }}
-//           className="text-orange-900 lg:top-[130px] lg:left-[90px] xl:left-[120px] xl:top-[170px]"
-//           variants={smokeVariants}
-//           // initial="initial"
-//           animate={
-//             animationState === 0
-//               ? "initial"
-//               : animationState === 1
-//               ? "clicked"
-//               : animationState === 2
-//               ? "clicked2"
-//               : "clicked3"
-//           }
-//         />
-//         <motion.div
-//           variants={buttonVariants}
-//           // initial="initial"
-//           animate={
-//             animationState === 0
-//               ? 'initial'
-//               : animationState === 1
-//               ? 'clicked'
-//               : animationState === 2
-//               ? 'clicked2'
-//               : 'clicked3'
-//           }
-//         >
-//           <button
-//             className="text-gray-900  bg-cover px-4 py-2 rounded-lg font-bold text-lg text-center absolute  lg:left-[-40px] lg:top-[-120px] xl:top-[10px] xl:left-[-10px] lg:scale-1"
-//             style={{
-//               position: "relative",
-//               zIndex: 10,
-//               opacity: 100,
-//             }}
-//             dir="rtl"
-//             onClick={handleClick}
-//           >
-//             <img src={zebdatasa} width={200} alt="click on zebda" />
-//           </button>
-//         </motion.div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default DefaultCircle;
 import zebdatasa from "/assets/Butter.png";
+import { useMediaQuery } from "@react-hook/media-query";
 import { motion } from "framer-motion";
 import samnaImg from "/assets/samna.png";
 
 const DefaultCircle = ({ animationState, setAnimationState }) => {
+  const isMobile = useMediaQuery("(max-width: 640px)");
+  const isTablet = useMediaQuery("(min-width: 641px) and (max-width: 1024px)");
+  const isDesktop = useMediaQuery("(min-width: 1025px)");
+
   const buttonVariants = {
-    initial: { scale: 1, rotate: 10, x: 0, y: "-5rem" },
-    clicked: { scale: 0.4, rotate: 140, x: "-5rem", y: "-12rem", transition: { duration: 0.5, ease: "easeInOut" } },
-    clicked2: { scale: 0.3, rotate: 300, x: "5rem", y: "-6rem", transition: { duration: 0.5, ease: "easeInOut" } },
-    clicked3: { scale: 0, rotate: 350, x: "-0.5rem", y: "4rem", transition: { duration: 0.5, ease: "easeInOut" } },
+    initial: { scale: isMobile ? .7 : 1, rotate: 10, x: 0, y: "-10vh" },
+    clicked: {
+      scale: 0.4,
+      rotate: 140,
+      x: isTablet ? "-7rem" : "-5rem",
+      y: isMobile ? "-7rem" : isTablet ? "-13rem" : "-12rem",
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+    clicked2: {
+      scale: 0.3,
+      rotate: 300,
+      x: "8rem",
+      y: "-1rem",
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+    clicked3: {
+      scale: 0,
+      rotate: 350,
+      x: "-0.5rem",
+      y: "5rem",
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
   };
 
-  const smokeVariants = {
-    initial: { x: "-0.5rem", y: "-4rem" },
-    clicked: { scale: 0.5, x: "-7rem", y: "-8rem", transition: { duration: 0.5, ease: "easeInOut" } },
-    clicked2: { scale: 0.4, x: "4rem", y: "-2rem", transition: { duration: 0.5, ease: "easeInOut" } },
-    clicked3: { scale: 0, x: "-2rem", y: "2rem", transition: { duration: 0.5, ease: "easeInOut" } },
+  const samnaVariants = {
+    initial: {scale: 1, x: "-1vw", y: "-8vh" },
+    clicked: {
+      scale: 0.3,
+      x: isMobile ? "-5rem" : isDesktop ? "-6rem" : "-7rem",
+      y: isMobile ? "-7rem" : "-14rem",
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+    clicked2: {
+      scale: isTablet ? 0.2 : isDesktop ? 0.3 : 0.2,
+      x: isMobile ? "7rem" : isTablet ? "7rem" : isDesktop ? "7rem" : "5rem",
+      y: isMobile ? "-2rem" : isTablet ? "-2rem" : isDesktop ? "-2rem" : "-4rem",
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+    clicked3: {
+      scale: 0,
+      x: "-2rem",
+      y: "2rem",
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
   };
 
   const handleClick = () => {
@@ -333,22 +60,22 @@ const DefaultCircle = ({ animationState, setAnimationState }) => {
   };
 
   return (
-    <div className="w-full h-auto rounded-full relative ">
+    <div className="w-full h-[400px] md:h-screen rounded-full relative">
       <div
-        className="absolute inset-1 z-0 rounded-full flex items-center justify-center"
+        className="absolute inset-0 rounded-full flex items-center justify-center"
         style={{
           backgroundImage: "url(/assets/tasa.png)",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
+          backgroundPosition: "10% 40%", // X% Y% (move right/left and up/down)
+          backgroundSize: "80%", // zoom in (increase), zoom out (decrease)
           backgroundRepeat: "no-repeat",
         }}
       >
         <motion.img
           src={samnaImg}
           alt="samna"
-          className="w-full max-w-sm h-auto absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2"
+          className="w-full max-w-[170px] md:max-w-[250px] h-auto absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2"
           style={{ filter: "brightness(1.8) contrast(1.1)" }}
-          variants={smokeVariants}
+          variants={samnaVariants}
           animate={
             animationState === 0
               ? "initial"
@@ -376,7 +103,11 @@ const DefaultCircle = ({ animationState, setAnimationState }) => {
             dir="rtl"
             onClick={handleClick}
           >
-            <img src={zebdatasa} alt="click on zebda" className="w-full max-w-[12rem] h-auto" />
+            <img
+              src={zebdatasa}
+              alt="click on zebda"
+              className="w-full max-w-[12rem] h-auto"
+            />
           </button>
         </motion.div>
       </div>
@@ -385,4 +116,3 @@ const DefaultCircle = ({ animationState, setAnimationState }) => {
 };
 
 export default DefaultCircle;
-

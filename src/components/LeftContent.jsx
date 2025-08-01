@@ -88,7 +88,7 @@ const LeftContent = ({ activeTab }) => {
       dir="rtl"
     >
       {activeTab === 0 ? (
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
+        <div className="flex flex-row md:flex-col justify-center items-center gap-4 mt-6">
           <img
             src={zebdaelsherkaImg}
             alt="sherka"
@@ -100,28 +100,27 @@ const LeftContent = ({ activeTab }) => {
             className="w-1/2 max-w-xs h-auto"
           />
         </div>
-      ) : activeTab === 1 ? (
-        null
-      ) : activeTab === 2 ? (
-        null
-      ) : activeTab === 3 ? (
+      ) : activeTab === 1 ? null : activeTab === 2 ? null : activeTab === 3 ? (
         <div className="flex justify-center items-center min-h-[20rem]">
-          <img src={contactImg} alt="contact us" className="w-full max-w-md h-auto" />
+          <img
+            src={contactImg}
+            alt="contact us"
+            className="w-full max-w-md h-auto"
+          />
         </div>
       ) : (
         <div className="text-center">
           <h2 className="text-xl sm:text-2xl font-bold text-orange-900 mb-4">
             وش معنى <span className="text-white">ريب</span>؟
           </h2>
-          <div className="text-gray-300 leading-relaxed space-y-3 text-xs sm:text-sm md:text-base">
-            <p>الصراحة ما يهم وش معنى ريب، لكن خل الي</p>
-            <p>يهمنا ايش ريب تسوي</p>
-            <p>حنا وكالة حلول إبداعية، نشتغل على اى تحدى ايا</p>
-            <p>كان نوعه سواء كان حملة إعلانية، تواصل داخلي،</p>
-            <p>إطلاق منتج فاعلية، محتوى تفاعلى،او حتى تغيير</p>
-            <p>صورة ذهنية، من أول الفكرة حق تنفيذها</p>
-            <p>مطلعينها مو زى اى مطبخ، الزبدة ريب في وسط</p>
-            <p>زحمة الأفكار تعطيك الزبدة مو أكثر ولا اقل</p>
+          <div className="text-gray-300 leading-relaxed space-y-3 text-xs sm:text-sm md:text-[11px] text-start">
+            <span>
+              الصراحة ما يهم وش معنى ريب، لكن كل اللي يهمنا ايش ريب تسوي. حنّا
+              وكالة حلول إبداعية، نشتغل على أي تحدي أياً كان نوعه، سواء كان حملة
+              إعلامية، تواصل داخلي، إطلاق منتج، فعالية، محتوى تفاعلي، أو حتى
+              تغيير صورة ذهنية. من أول الفكرة حتى تنفيذها. مطبخنا مو زي أي مطبخ،
+              الزبدة: ريب في وسط زحمة الأفكار، تعطيك الزبدة. مو أكثر، ولا أقل.
+            </span>
           </div>
         </div>
       )}

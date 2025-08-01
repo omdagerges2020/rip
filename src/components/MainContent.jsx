@@ -163,11 +163,12 @@ const MainContent = ({
   setViewMode,
 }) => {
   const getGridClasses = () => {
-    if(activeTab === 2){
-          return "grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[0fr_3fr_1fr] gap-4 sm:gap-6 lg:gap-8 items-center mt-6 max-w-7xl ";
+    if (activeTab === 2) {
+      return "grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[0fr_3fr_1fr] gap-4 sm:gap-6 lg:gap-8 items-center mt-6 max-w-7xl ";
+    } else if (activeTab === 1) {
+      return "grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-4 sm:gap-6 lg:gap-8 items-center mt-6 max-w-7xl ";
     } else {
-          return "grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_3fr_1fr] gap-4 sm:gap-6 lg:gap-8 items-center mt-6 max-w-7xl ";
-
+      return "grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_3fr_1fr] gap-4 sm:gap-6 lg:gap-8 items-center mt-6 max-w-7xl ";
     }
   };
 
@@ -242,18 +243,17 @@ const MainContent = ({
         </AnimatePresence>
 
         <AnimatePresence>
-          {(viewMode === "default" || viewMode === "tab-content") && (
-            <motion.div
-              key="left-content"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="order-3 lg:order-1 flex justify-center lg:hidden"
-            >
-              <LeftContentMobile />
-            </motion.div>
-          )}
+          {/* {(viewMode === "default" || viewMode === "tab-content") && ( */}
+          <motion.div
+            key="left-content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="order-3 lg:order-1 flex justify-center lg:hidden"
+          >
+            <LeftContentMobile />
+          </motion.div>
         </AnimatePresence>
 
         <AnimatePresence>
@@ -272,7 +272,7 @@ const MainContent = ({
         </AnimatePresence>
       </div>
 
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center mt-[5em]">
         <SocialLinks />
       </div>
     </main>
